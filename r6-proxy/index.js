@@ -1,14 +1,12 @@
 const express = require('express');
-const fetch = require('node-fetch'); // Version 2 preferred for compatibility
+const fetch = require('node-fetch'); // Use node-fetch v2 for compatibility
 const app = express();
 
 const PORT = process.env.PORT || 3000;
-
-// 🔐 Replace with your actual tracker.gg API key
-const API_KEY = 'c0a56f80-c74b-4b94-bccb-ec3a584b1344';
+const API_KEY = process.env.API_KEY; // 🔐 Now using environment variable
 
 app.get('/', (req, res) => {
-  res.send('R6 Proxy API is live');
+  res.send('✅ R6 Proxy API is live');
 });
 
 app.get('/r6', async (req, res) => {
